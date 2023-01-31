@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    </style>
     <title>Email sending form</title>
     <script src="./popup.js"></script>
 </head>
 <body>
- <form>  
-
+<form>  
 <label for="firstname">First name:</label>
 <input type="text" id="firstname" name="firstname"> <br>
 
@@ -14,7 +23,7 @@
 <input type="text" id="name" name="name"><br>
 
 <label for="age">Age:</label>
-<input type="number" id="age" name="age"><br>
+<input type="number" inputmode="numeric" pattern="[0-9]*" id="age" name="age"><br>
 
 <label for="phone">Phone:</label>
 <input type="tel" id="phone" name="phone"><br>
@@ -26,9 +35,9 @@
 <input type="checkbox" id="student" name="student"><br>
 
 <p>Gender:</p>
-<input type="radio" name="Male" id="gender_male" value="Male">Male
-<input type="radio" name="Female" id="gender_female" value="Female">Female
-<input type="radio" name="Other" id="gender_other" value="Other">Other
+<input type="radio" name="gender" id="gender_male" value="Male">Male
+<input type="radio" name="gender" id="gender_female" value="Female">Female
+<input type="radio" name="gender" id="gender_other" value="Other">Other
 <br>
 
 <button value="submit" onclick="displayFormContents();" type="Submit">Submit</button>
