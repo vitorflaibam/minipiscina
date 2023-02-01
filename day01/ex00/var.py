@@ -1,4 +1,3 @@
-
 def my_var(quatrodois):
     print(quatrodois, "has a type", type(quatrodois)) 
 

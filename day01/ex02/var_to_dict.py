@@ -21,18 +21,15 @@ d = [
 ('Burton' , '1939')
 ]
 
-dict = {}
+def dicionario():
+    dict = {}
+    for key, value in d:
+        if value in dict:
+            dict[value] += ' -> ' + key
+        else:
+            dict[value] = key
 
-for i , j in d:
-    dict[j] = i
-    print(j, ":", i)
+    for key, value in dict.items():
+        print(key, ":" ,value)
 
-
-
-# transformar em dicionario
-#extrair antes ou depois os dados?
-
-# def Convert(lst):
-#     res_dct = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
-#     return res_dct
-         
+dicionario()
