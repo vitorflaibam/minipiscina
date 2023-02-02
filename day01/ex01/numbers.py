@@ -4,5 +4,6 @@ def num():
 
     for number in numbers:
         print(number)
-
-num()
+        
+if __name__ == '__main__':
+    num()
