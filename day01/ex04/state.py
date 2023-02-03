@@ -19,12 +19,14 @@ def capital_cities():
     return capital_cities
 
 def chave_capital(val):
-    for chavecapital, value in capital_cities.items():
+    capitals = capital_cities()
+    for chavecapital, value in capitals.items():
         if val == value:
             return chavecapital
     
 def chave_estado(val):
-    for chavestado, value in states.items():
+    statess = states()
+    for chavestado, value in statess.items():
         if val == value:
             return chavestado
     return None

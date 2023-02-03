@@ -1,6 +1,6 @@
 import sys
 
-def states():
+def statess():
     states = {
     "Oregon" : "OR",
     "Alabama" : "AL",
@@ -23,10 +23,12 @@ def getstate():
         sys.exit(0)
     else: 
         input = sys.argv[1]
-        estado = states.get(input) # recebe estado e retorna o valor dela (sigla)
-        result = capital_cities.get(estado) #recebe a sigla e retorna o valor dela (capital)
-        if input in states.keys():
-            print(result)
+        estado = statess()
+        # estado.get(inpu t)# recebe estado e retorna o valor dela (sigla)
+        result = capital_cities()
+        final = result.get(estado.get(input)) # recebe a sigla e retorna o valor dela (capital)
+        if input in estado.keys():
+            print(final)
         else: sys.exit("Unknown state.")
 
 if __name__ == '__main__':

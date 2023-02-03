@@ -1,4 +1,4 @@
-def d():
+def dictt():
     d = [
     ('Hendrix' , '1942'),
     ('Allman' , '1946'),
@@ -24,6 +24,7 @@ def d():
     return d
 
 def dicionario():
+    d = dictt()
     dict = {}
     for key, value in d:
         if value in dict:
