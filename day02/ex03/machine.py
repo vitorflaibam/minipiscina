@@ -22,7 +22,7 @@ class CoffeeMachine:
     def serve(self, beverage):
         self.beverage = HotBeverage
         random.choice(beverage)
-        raise(Exception (CoffeeMachine.BrokenMachineException))
+        raise(CoffeeMachine.BrokenMachineException)
         if serve() > 10:
             repair()
         return EmptyCup
