@@ -1,48 +1,39 @@
 class HotBeverage:
-    def __init__(self):
-        self.name = "hot beverage"
-        self.price = format(0.30,".2f")
+	def __init__(self, name="hot beverage", price=0.30):
+		self.name = name
+		self.price = price
 
-    def description(self):
-        return "description: Just some hot water in a cup."
+	def description(self):
+		return "Just some hot water in a cup."
 
-class Coffee:
-    def __init__(self):
-        self.name = "coffee"
-        self.price = format(0.40,".2f")
+	def __str__(self) -> str:
+		params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
+		return params
 
-    def description(self):
-        return "A coffee, to stay awake."
+class Coffee(HotBeverage):
+	def __init__(self):
+		super().__init__(name="coffee", price=0.40)
 
-class Tea:
-    def __init__(self) -> None:
-        self.name = "tea"
-        self.price = format(0.30,".2f")
-        pass
+	def description(self):
+		return "A coffee, to stay awake."
 
-    def description(self):
-        return "Just some hot water in a cup."
+class Tea(HotBeverage):
+	def __init__(self) -> None:
+		super().__init__(name="tea", price=0.30)
 
-class Chocolate:
-    def __init__(self):
-        self.name = "chocolate"
-        self.price = format(0.50,".2f")
-        pass
+	def description(self):
+		return "Just some hot water in a cup."
 
-    def description(self):
-        return "Chocolate, sweet chocolate..."
+class Chocolate(HotBeverage):
+	def __init__(self):
+		super().__init__(name="chocolate", price=0.50)
 
-class Cappuccino:
-    def __init__(self):
-        self.name = "cappuccino"
-        self.price = format(0.45,".2f")
-        pass
+	def description(self):
+		return "Chocolate, sweet chocolate..."
 
-    def description(self):
-        return "Un po’ di Italia nella sua tazza!"
+class Cappuccino(HotBeverage):
+	def __init__(self):
+		super().__init__(name="cappuccino", price=0.45)
 
-hot_beverage = HotBeverage()
-coffee = Coffee()
-tea = Tea()
-chocolate = Chocolate()
-cappuccino = Cappuccino()
+	def description(self):
+		return "Un po’ di Italia nella sua tazza!"

@@ -64,7 +64,7 @@ class Elem:
             return ''
         result = '\n'
         for elem in self.content:
-            result += [...]
+            result += elem
         return result
 
     def add_content(self, content):

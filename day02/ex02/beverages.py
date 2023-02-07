@@ -1,80 +1,55 @@
 class HotBeverage:
-    def __init__(self):
-        self.name = "hot beverage"
-        self.price = 0.30
+	def __init__(self, name="hot beverage", price=0.30):
+		self.name = name
+		self.price = price
 
-    def description(self):
-        return "Just some hot water in a cup."
+	def description(self):
+		return "Just some hot water in a cup."
 
-    def __str__(self) -> str:
-        params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
-        return params
+	def __str__(self) -> str:
+		params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
+		return params
 
-class Coffee:
-    def __init__(self):
-        self.name = "coffee"
-        self.price = 0.40
+class Coffee(HotBeverage):
+	def __init__(self):
+		super().__init__(name="coffee", price=0.40)
 
-    def description(self):
-        return "A coffee, to stay awake."
+	def description(self):
+		return "A coffee, to stay awake."
 
-    def __str__(self) -> str:
-        params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
-        return params
+class Tea(HotBeverage):
+	def __init__(self) -> None:
+		super().__init__(name="tea", price=0.30)
 
-class Tea:
-    def __init__(self) -> None:
-        self.name = "tea"
-        self.price = 0.30
-        pass
+	def description(self):
+		return "Just some hot water in a cup."
 
-    def description(self):
-        return "Just some hot water in a cup."
+class Chocolate(HotBeverage):
+	def __init__(self):
+		super().__init__(name="chocolate", price=0.50)
 
-    def __str__(self) -> str:
-        params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
-        return params
+	def description(self):
+		return "Chocolate, sweet chocolate..."
 
-class Chocolate:
-    def __init__(self):
-        self.name = "chocolate"
-        self.price = 0.50
-        pass
+class Cappuccino(HotBeverage):
+	def __init__(self):
+		super().__init__(name="cappuccino", price=0.45)
 
-    def description(self):
-        return "Chocolate, sweet chocolate..."
+	def description(self):
+		return "Un po’ di Italia nella sua tazza!"
 
-    def __str__(self) -> str:
-        params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
-        return params
+def test():
+	print("*"*51)
+	hot_beverage = HotBeverage()
+	print(hot_beverage, "\n",("*"*50))
+	coffee = Coffee()
+	print(coffee, "\n",("*"*50))
+	tea = Tea()
+	print(tea, "\n",("*"*50))
+	chocolate = Chocolate()
+	print(chocolate, "\n",("*"*50))
+	cappuccino = Cappuccino()
+	print(cappuccino,"\n",("*"*50))
 
-class Cappuccino:
-    def __init__(self):
-        self.name = "cappuccino"
-        self.price = 0.45
-        pass
-
-    def description(self):
-        return "Un po’ di Italia nella sua tazza!"
-
-    def __str__(self) -> str:
-        params= "name : " + self.name + "\nprice : " + format(self.price,".2f") + "\ndescription : " + self.description()
-        return params
-
-hot_beverage = HotBeverage()
-coffee = Coffee()
-tea = Tea()
-chocolate = Chocolate()
-cappuccino = Cappuccino()
-
-print("-"*50)
-print(hot_beverage)
-print("-"*50)
-print(coffee)
-print("-"*50)
-print(tea)
-print("-"*50)
-print(chocolate)
-print("-"*50)
-print(cappuccino)
-print("-"*50)
+if __name__ == "__main__":
+	test()
