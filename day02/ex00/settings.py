@@ -1,4 +1,4 @@
 title = "Curriculum"
 name = "Vitor"
-surname = "Flaibam"
+lastname = "Flaibam"
 age = "30"
