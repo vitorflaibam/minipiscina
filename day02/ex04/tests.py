@@ -24,11 +24,13 @@ def test_text():
 
     
 def test_elem_basics():
-    # Default behaviour :
+    # Default behaviour:
     assert str(Elem()) == '<div></div>'
     # Arguments order :
     assert str(Elem('div', {}, None, 'double')) == '<div></div>'
     # Argument names :
+    # print((Elem(tag='body', attr={}, content=Elem(),
+    #                 tag_type='double')))
     assert str(Elem(tag='body', attr={}, content=Elem(),
                     tag_type='double')) == '<body>\n  <div></div>\n</body>'
     # With elem as content :
