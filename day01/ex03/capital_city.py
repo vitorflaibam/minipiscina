@@ -23,11 +23,10 @@ def getstate():
         sys.exit(0)
     else: 
         input = sys.argv[1]
-        estado = statess()
-        # estado.get(inpu t)# recebe estado e retorna o valor dela (sigla)
+        states_list = statess()
         result = capital_cities()
-        final = result.get(estado.get(input)) # recebe a sigla e retorna o valor dela (capital)
-        if input in estado.keys():
+        final = result.get(states_list.get(input)) 
+        if input in states_list.keys():
             print(final)
         else: sys.exit("Unknown state.")
 

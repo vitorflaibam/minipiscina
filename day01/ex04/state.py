@@ -18,30 +18,30 @@ def capital_cities():
     }
     return capital_cities
 
-def chave_capital(val):
+def capital_key(val):
     capitals = capital_cities()
-    for chavecapital, value in capitals.items():
+    for capitalkey, value in capitals.items():
         if val == value:
-            return chavecapital
+            return capitalkey
     
-def chave_estado(val):
+def state_keys(val):
     statess = states()
-    for chavestado, value in statess.items():
+    for statekey, value in statess.items():
         if val == value:
-            return chavestado
+            return statekey
     return None
 
-def rodar():
+def run():
     if len(sys.argv) != 2:
         sys.exit(0)
     else:
         input = sys.argv[1]
-        chave_capitaltest = chave_capital(input)
-        chavestado = chave_estado(chave_capitaltest)
-        if chavestado != None: 
-            print(chavestado)
+        key_capitaltest = capital_key(input)
+        statekey = state_keys(key_capitaltest)
+        if statekey != None: 
+            print(statekey)
         else:
             print("Unknown state.")
 
 if __name__ == '__main__':
-    rodar()
+    run()

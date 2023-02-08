@@ -1,5 +1,5 @@
-def my_var(quatrodois):
-    print(quatrodois, "has a type", type(quatrodois)) 
+def my_var(fourty_two):
+    print(fourty_two, "has a type", type(fourty_two)) 
 
 if __name__ == '__main__':
     my_var(42)

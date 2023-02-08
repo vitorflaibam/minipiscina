@@ -23,7 +23,7 @@ def dictt():
 ]
     return d
 
-def dicionario():
+def dictionary():
     d = dictt()
     dict = {}
     for key, value in d:
@@ -36,4 +36,4 @@ def dicionario():
         print(key, ":" ,value)
 
 if __name__ == '__main__':
-    dicionario()
+    dictionary()

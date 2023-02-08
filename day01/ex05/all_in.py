@@ -48,12 +48,3 @@ if __name__ == '__main__':
 	else:	
 		all_in(sys.argv[1])
   
-# The program must take for argument a string containing as many expressions as
-# we search for, separated by a coma.
-# • For each expression in this string, the program must detect if it’s a capital, a state
-# or none of them.
-# • The program must not be case-sensitive. It must not take multiple spaces in consideration either.
-# • If there is no parameter or too many parameters, the program doesn’t display
-# anything.
-# • When there are two successive comas in the string, the program doesn’t display
-# anything.

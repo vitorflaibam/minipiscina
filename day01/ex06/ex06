@@ -23,15 +23,6 @@ def create_dict():
     }
 
     return d
-#The lambda keyword allows us to declare small, anonymous, single-line functions,
-#  taking one or more parameters and returning a value of an expression.
-# Nesse caso, o sotrd faz com q a ordem se altere de acordo com oq a função busca
-
-# 19433Joga
-# 19433B
-# 
-# 
-
 
 def my_sort():
     d = create_dict()
