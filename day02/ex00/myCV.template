@@ -12,10 +12,11 @@
 <title>{name}&nbsp{title}</title> 
 
 <h1 style="color:rgb(33, 99, 58);text-align:center">
-{name}&nbsp{lastname}
+{name}&nbsp{surname}
 </h1>
 
 <h2>Idade: {age} anos
+<h2>Profissão: {profession}</h2>
 
 <h2>Habilidades</h2>
 

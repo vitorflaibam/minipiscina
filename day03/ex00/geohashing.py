@@ -1,11 +1,14 @@
-import sys, antigravity
+import sys
+from antigravity import geohash
 
-
-def geohash():
-    ...
-
+def run():
+    if (len(sys.argv) != 4):
+        print("Invalid or empty arguments.")
+    else:
+        geohash(float(sys.argv[1]), float(sys.argv[2]), sys.argv[3].encode('utf-8'))
+        
 if __name__ == "__main__":
-    ...
+    run()
 
 #  '''Compute geohash() using the Munroe algorithm.
 
@@ -13,7 +16,4 @@ if __name__ == "__main__":
 #     37.857713 -122.544543
 
 #     '''
-
-    h = hashlib.md5(datedow).hexdigest()
-    p, q = [('%f' % float.fromhex('0.' + x)) for x in (h[:16], h[16:32])]
-    print('%d%s %d%s' % (latitude, p[1:], longitude, q[1:]))
+# 37.421542 -122.085589 "b'2005-05-26-10458.68'"

@@ -1,4 +1,6 @@
 title = "Curriculum"
 name = "Vitor"
-lastname = "Flaibam"
+surname = "Flaibam"
 age = "30"
+page = "??"
+profession = "Analyst @ Itaú"

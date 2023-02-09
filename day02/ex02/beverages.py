@@ -19,7 +19,7 @@ class Coffee(HotBeverage):
 
 class Tea(HotBeverage):
 	def __init__(self) -> None:
-		super().__init__(name="tea", price=0.30)
+		super().__init__(name="tea")
 
 	def description(self):
 		return "Just some hot water in a cup."
