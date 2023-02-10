@@ -21,9 +21,6 @@ class Tea(HotBeverage):
 	def __init__(self) -> None:
 		super().__init__(name="tea")
 
-	def description(self):
-		return "Just some hot water in a cup."
-
 class Chocolate(HotBeverage):
 	def __init__(self):
 		super().__init__(name="chocolate", price=0.50)
