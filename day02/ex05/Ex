@@ -1,0 +1,95 @@
+Sim, é possível criar um sistema de transferência bancária sem usar um HashMap. Você pode armazenar as contas em uma lista ou outro tipo de estrutura de dados. Aqui está um exemplo simplificado usando uma lista de objetos de conta:
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Banco {
+
+    private List<Conta> contas;
+
+    public Banco() {
+        contas = new ArrayList<>();
+    }
+
+    public void adicionarConta(Conta novaConta) {
+        contas.add(novaConta);
+    }
+
+    public boolean transferencia(String contaOrigem, String contaDestino, double valor) {
+        Conta origem = null;
+        Conta destino = null;
+
+        // Encontrar as contas de origem e destino
+        for (Conta conta : contas) {
+            if (conta.getChave().equals(contaOrigem)) {
+                origem = conta;
+            }
+            if (conta.getChave().equals(contaDestino)) {
+                destino = conta;
+            }
+        }
+
+        if (origem != null && destino != null) {
+            if (origem.getSaldo() >= valor) {
+                origem.sacar(valor);
+                destino.depositar(valor);
+                return true; // Transferência bem-sucedida
+            }
+        }
+        return false; // Transferência falhou
+    }
+
+    public static void main(String[] args) {
+        Banco banco = new Banco();
+        Conta conta1 = new Conta("Conta1", 1000.0);
+        Conta conta2 = new Conta("Conta2", 500.0);
+
+        banco.adicionarConta(conta1);
+        banco.adicionarConta(conta2);
+
+        // Transferência de Conta1 para Conta2
+        boolean transferenciaBemSucedida = banco.transferencia("Conta1", "Conta2", 200.0);
+        if (transferenciaBemSucedida) {
+            System.out.println("Transferência bem-sucedida");
+        } else {
+            System.out.println("Transferência falhou");
+        }
+
+        // Verificação de saldo
+        double saldoConta1 = conta1.getSaldo();
+        double saldoConta2 = conta2.getSaldo();
+
+        System.out.println("Saldo da Conta1: " + saldoConta1);
+        System.out.println("Saldo da Conta2: " + saldoConta2);
+    }
+}
+
+class Conta {
+    private String chave;
+    private double saldo;
+
+    public Conta(String chave, double saldo) {
+        this.chave = chave;
+        this.saldo = saldo;
+    }
+
+    public String getChave() {
+        return chave;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void depositar(double valor) {
+        saldo += valor;
+    }
+
+    public void sacar(double valor) {
+        saldo -= valor;
+    }
+}
+```
+
+Neste exemplo, as contas são armazenadas em uma lista de objetos `Conta`, e as operações de transferência são realizadas através de métodos na classe `Conta`. Isso elimina a necessidade de um HashMap para armazenar as contas.
